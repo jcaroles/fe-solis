@@ -20,8 +20,9 @@ For the sake of brevity, I made components based on requirements and these compo
     - This presents the data extraction and data processing where the data is passed to the sub components inside
     - Used axios for fetching data
 
-- DataFilterComponent & AggregationComponent (This is where the search input and the calculated of users and averge username field is located)
+- DataFilterComponent & AggregationComponent (This is where the search input and the calculation of users and average username field count is located)
     - This presents Filtering, Aggregation and Display
+    - AggregationComponent is used under DataFilterComponent since they share the same states
     - Used react-window to optimize and enhance performance on displaying the list of users
       
 - DataSortComponent (Component to sort by Ascending/Descending order by username or UserID)
