@@ -3,6 +3,7 @@ import { FixedSizeList } from "react-window";
 import { Data } from "../models/modelData";
 import { AggregationComponent } from "./AggregationComponent";
 
+// I utilize react-window to display the 5000 users in the page to improve performance
 const Row: React.FC<{
   index: number;
   style: React.CSSProperties;
@@ -36,10 +37,12 @@ export const DataFilterComponent: React.FC<DataFilterProps> = ({
     setInputvalue(event.target.value);
   };
 
+  // Takes the sortedUsers from props and reflect this on the page based on the input
   const filteredUsers = sortedUsers?.filter((userData: Data) =>
     userData.Username.toLowerCase().includes(inputValue.toLowerCase())
   );
 
+  // Under this component you can see AggregationComponent which takes the filteredUsers and calculate based on the requirements
   return (
     <>
       <div className="font-semibold pb-4">Search User</div>

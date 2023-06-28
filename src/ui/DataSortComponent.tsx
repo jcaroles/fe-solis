@@ -12,6 +12,7 @@ export const DataSortComponent: React.FC<DataSortProps> = ({
 }) => {
   const [sortUserOption, setSortUserOption] = useState<string>("ID Ascending");
 
+  // Logic in sorting based on the requirement
   useEffect(() => {
     const sortedDataSet = [...dataset];
     if (sortUserOption === "ID Ascending") {
