@@ -29,6 +29,7 @@ For the sake of brevity, I made components based on requirements and these compo
     - Before displaying the user data, it must have sorted first then the DataSortComopnent will pass the sorted data to DataFilterComponent through props from child to parent,
       then it will be rendered on the page
 
+Bit of design using TailwindCSS for better visualization
 
 Steps:
 
