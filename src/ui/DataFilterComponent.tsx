@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FixedSizeList } from "react-window";
 import { Data } from "../models/modelData";
 import { AggregationComponent } from "./AggregationComponent";
@@ -34,6 +34,19 @@ export const DataFilterComponent: React.FC<DataFilterProps> = ({
   sortedUsers,
 }) => {
   const [inputValue, setInputvalue] = useState<string>("");
+  const [windowHeight, setWindowHeight] = useState<number>(window.innerHeight);
+
+  // So the list can adjust based on the resolution of the client browser
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowHeight(window.innerHeight);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInputvalue(event.target.value);
@@ -43,6 +56,9 @@ export const DataFilterComponent: React.FC<DataFilterProps> = ({
   const filteredUsers = sortedUsers?.filter((userData: Data) =>
     userData.Username.toLowerCase().includes(inputValue.toLowerCase())
   );
+
+  // Gives flexibility height on the list
+  const listHeight = Math.floor(windowHeight * 0.7); // Set the maximum height for the list
 
   // Under this component you can see AggregationComponent which takes the filteredUsers and calculate based on the requirements
   return (
@@ -60,7 +76,7 @@ export const DataFilterComponent: React.FC<DataFilterProps> = ({
       </div>
       <AggregationComponent filteredUsers={filteredUsers} />
       <FixedSizeList
-        height={550} // Height container
+        height={listHeight} // Height container
         width={1000} // Width container
         itemSize={200} // Height of each card
         itemCount={filteredUsers.length} // Total number of items
