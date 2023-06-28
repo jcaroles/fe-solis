@@ -21,9 +21,21 @@ For the sake of brevity, I made components based on requirements and these compo
     - Used axios for fetching data
 
 - DataFilterComponent & AggregationComponent (This is where the search input and the calculated of users and averge username field is located)
-    - This present Filtering, Aggregation and Display
+    - This presents Filtering, Aggregation and Display
     - Used react-window to optimize and enhance performance on displaying the list of users
       
-- DataSortComponent (Component to sort by Ascenidng/Descending order by username or UserID)
+- DataSortComponent (Component to sort by Ascending/Descending order by username or UserID)
+    - This presents Sorting
+    - Before displaying the user data, it must have sorted first then the DataSortComopnent will pass the sorted data to DataFilterComponent through props from child to parent,
+      then it will be rendered on the page
+
+
+Steps:
+
+- Install the packages by npm install
+- Once done, in the directory, run npm start
+- If successful, go to localhost:3000
+
+Reach out to the developer for any questions or concerns!
 
 
