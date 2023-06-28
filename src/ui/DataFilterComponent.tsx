@@ -60,7 +60,7 @@ export const DataFilterComponent: React.FC<DataFilterProps> = ({
       </div>
       <AggregationComponent filteredUsers={filteredUsers} />
       <FixedSizeList
-        height={1000} // Height container
+        height={550} // Height container
         width={1000} // Width container
         itemSize={200} // Height of each card
         itemCount={filteredUsers.length} // Total number of items
