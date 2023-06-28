@@ -35,7 +35,7 @@ export const DataSearch: React.FC = () => {
             setSortedUsers={setSortedUsers}
           />
         </div>
-        <div className="w-1/3 order-2 md:order-1">
+        <div className="w-2/5 order-2 md:order-1">
           <DataFilterComponent sortedUsers={sortedUsers} />
         </div>
       </div>

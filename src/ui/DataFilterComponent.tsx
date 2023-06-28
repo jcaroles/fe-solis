@@ -15,9 +15,11 @@ const Row: React.FC<{
       <div className="bg-white rounded-lg shadow-md p-4">
         <h2 className="text-xl font-semibold mb-2">UserID: {user.UserId}</h2>
         <h2 className="text-xl font-semibold mb-2">
+          Username: {user.Username}
+        </h2>
+        <h2 className="text-l font-semibold mb-2">
           Full name: {user.firstname} {user.lastname}
         </h2>
-        <h2 className="text-l font-semibold mb-2">Username: {user.Username}</h2>
         <p className="text-gray-600">Email: {user.Email}</p>
         <p className="text-gray-600">Phone Number: {user.PhoneNumber}</p>
       </div>
@@ -45,11 +47,8 @@ export const DataFilterComponent: React.FC<DataFilterProps> = ({
   // Under this component you can see AggregationComponent which takes the filteredUsers and calculate based on the requirements
   return (
     <>
-      <div className="font-semibold pb-4">Search User</div>
-      <label className="relative block">
-        <div className="sr-only">Search</div>
-      </label>
-      <div className="w-80">
+      <div className="font-semibold pb-4">Search Username</div>
+      <div className="w-9/12">
         <input
           type="text"
           value={inputValue}
