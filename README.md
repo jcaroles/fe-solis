@@ -2,6 +2,8 @@
 
 Made this CRA based on the requirements given to me.
 
+# NOTE: As per requirements, the company name should be displayed in the page, but the data provided has no company data in it. Thus, replaced it with Phone number
+
 Keypoints to take:
 - Data Extraction
 - Data Processing
