@@ -1,46 +1,42 @@
-# Getting Started with Create React App
+# fe-solis
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Made this CRA based on the requirements given to me.
 
-## Available Scripts
+Keypoints to take:
+- Data Extraction
+- Data Processing
+- Filtering
+- Sorting
+- Aggregation
+- Display
 
-In the project directory, you can run:
+Used tech:
+- TypeScript
+- TailwindCSS
 
-### `npm start`
+For the sake of brevity, I made components based on requirements and these components are:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- DataSearch component (Master component where it will fetch the ata from an API which I created using Express in a different repo (be-solis)
+    - This presents the data extraction and data processing where the data is passed through the sub components inside
+    - Used axios for fetching data
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- DataFilterComponent & AggregationComponent (This is where the search input and the calculated of users and averge username field is located)
+    - This presents Filtering, Aggregation and Display
+    - Used react-window to optimize and enhance performance on displaying the list of users
+      
+- DataSortComponent (Component to sort by Ascending/Descending order by username or UserID)
+    - This presents Sorting
+    - Before displaying the user data, it must have sorted first then the DataSortComopnent will pass the sorted data to DataFilterComponent through props from child to parent,
+      then it will be rendered on the page
 
-### `npm test`
+Bit of design using TailwindCSS for better visualization
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Steps:
 
-### `npm run build`
+- Install the packages by npm install
+- Once done, in the directory, run npm start
+- If successful, go to localhost:3000
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Reach out to the developer for any questions or concerns!
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
