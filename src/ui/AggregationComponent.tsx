@@ -20,10 +20,12 @@ export const AggregationComponent: React.FC<AggregationProps> = ({
   );
 
   return (
-    <div className="pb-4 font-semibold">
-      The total count is <span className="font-bold">{totalCount}</span> with
-      average username length of{" "}
-      <span className="font-bold">{averageUsernameLength}</span>.
-    </div>
+    <>
+      <div className="pb-4 font-semibold">
+        The total count is <span className="font-bold">{totalCount}</span> with
+        average username length of{" "}
+        <span className="font-bold">{averageUsernameLength}</span>.
+      </div>
+    </>
   );
 };

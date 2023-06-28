@@ -21,11 +21,20 @@ export const DataSearch: React.FC = () => {
     };
     fetchData();
   }, []);
-  console.log("dataSET", dataset);
+
   return (
-    <div>
-      <DataSortComponent dataset={dataset} setSortedUsers={setSortedUsers} />
-      <DataFilterComponent sortedUsers={sortedUsers} />
-    </div>
+    <>
+      <div className="flex flex-col md:flex-row">
+        <div className="order-1 md:order-2">
+          <DataSortComponent
+            dataset={dataset}
+            setSortedUsers={setSortedUsers}
+          />
+        </div>
+        <div className="w-96 order-2 md:order-1">
+          <DataFilterComponent sortedUsers={sortedUsers} />
+        </div>
+      </div>
+    </>
   );
 };
