@@ -17,7 +17,7 @@ Used tech:
 For the sake of brevity, I made components based on requirements and these components are:
 
 - DataSearch component (Master component where it will fetch the ata from an API which I created using Express in a different repo (be-solis)
-    - This presents the data extraction and data processing where the data is passed through the sub components inside
+    - This presents the data extraction and data processing where the data is passed to the sub components inside
     - Used axios for fetching data
 
 - DataFilterComponent & AggregationComponent (This is where the search input and the calculated of users and averge username field is located)
